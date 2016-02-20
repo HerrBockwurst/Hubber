@@ -1,0 +1,10 @@
+name: Hubber
+version: 1.0.0
+main: de.herrbockwurst.hubber.main
+description: Hubtool for JW Server
+author: HerrBockwurst
+commands:
+  hub:
+    usage: /<command>
+    description: Send to Hub
+    aliases: [lobby]

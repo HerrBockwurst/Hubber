@@ -1,0 +1,4 @@
+Doppelsprung
+Kein Hunger
+Auto Heal
+Tp von Gameserver -> Hub
