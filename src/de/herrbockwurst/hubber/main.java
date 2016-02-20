@@ -24,6 +24,7 @@ public class main extends JavaPlugin {
 		getConf();
 		registerListeners();
 		registerCommands();
+		//test
 	}
 	
 	private void getConf() {
