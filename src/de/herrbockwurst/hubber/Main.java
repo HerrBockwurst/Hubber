@@ -1,5 +1,6 @@
 package de.herrbockwurst.hubber;
 
+import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import de.herrbockwurst.hubber.Config.SimpleConfig;
@@ -19,14 +20,18 @@ public class Main extends JavaPlugin {
     
 	@Override
 	public void onEnable() {
-		super.onEnable();
 		thisclass = this;
 		
 		getConf();
 		registerListeners();
 		registerCommands();
+		getBungeeCon();
 	}
 	
+	public void getBungeeCon() {
+		Bukkit.getMessenger().registerOutgoingPluginChannel(this, "BungeeCord");
+	}
+
 	private void getConf() {
 		manager = new SimpleConfigManager(this);
 		config = manager.getNewConfig("config.yml");
@@ -43,6 +48,8 @@ public class Main extends JavaPlugin {
 	public void registerCommands() {
 		getCommand("hub").setExecutor(new Hub());
 	}
+
+
 	
 	
 	
