@@ -2,10 +2,10 @@ package de.herrbockwurst.hubber;
 
 import de.herrbockwurst.hubber.Config.SimpleConfig;
 
-public class fixconfig {
+public class FixConfig {
 	public static void fix() {
-		fixMain(main.thisclass.config);
-		fixLang(main.thisclass.lang);
+		fixMain(Main.thisclass.config);
+		fixLang(Main.thisclass.lang);
 	}
 	
 	public static void fixMain(SimpleConfig config) {

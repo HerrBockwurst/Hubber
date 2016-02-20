@@ -6,13 +6,13 @@ import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageEvent;
 
-import de.herrbockwurst.hubber.main;
+import de.herrbockwurst.hubber.Main;
 
 public class FallDamage implements Listener {
 	
 	@EventHandler(priority=EventPriority.HIGH)
 	public void onFallDamage (EntityDamageEvent event) {
-		if(main.thisclass.config.getBoolean("events.FallDamage") == false) {
+		if(Main.thisclass.config.getBoolean("events.FallDamage") == false) {
 			//FallDamage eingeschalten?
 			return;
 		}

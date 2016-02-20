@@ -1,6 +1,6 @@
 name: Hubber
 version: 1.0.0
-main: de.herrbockwurst.hubber.main
+main: de.herrbockwurst.hubber.Main
 description: Hubtool for JW Server
 author: HerrBockwurst
 commands:

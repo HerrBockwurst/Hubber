@@ -4,13 +4,14 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import de.herrbockwurst.hubber.Config.SimpleConfig;
 import de.herrbockwurst.hubber.Config.SimpleConfigManager;
+import de.herrbockwurst.hubber.commands.Hub;
 import de.herrbockwurst.hubber.listeners.VoidFall;
 import de.herrbockwurst.hubber.listeners.FallDamage;
-import de.herrbockwurst.hubber.fixconfig;
+import de.herrbockwurst.hubber.FixConfig;
 
-public class main extends JavaPlugin {
+public class Main extends JavaPlugin {
 	
-	public static main thisclass = null;
+	public static Main thisclass = null;
     public SimpleConfigManager manager;
     public SimpleConfig config;
     public SimpleConfig lang;
@@ -24,7 +25,6 @@ public class main extends JavaPlugin {
 		getConf();
 		registerListeners();
 		registerCommands();
-		//test
 	}
 	
 	private void getConf() {
@@ -32,7 +32,7 @@ public class main extends JavaPlugin {
 		config = manager.getNewConfig("config.yml");
 		lang = manager.getNewConfig("language/de.yml");
 		
-		fixconfig.fix();
+		FixConfig.fix();
 	}
 
 	public void registerListeners() {
@@ -41,7 +41,7 @@ public class main extends JavaPlugin {
 	}
 	
 	public void registerCommands() {
-		getCommand("hub").setExecutor(new Commands());
+		getCommand("hub").setExecutor(new Hub());
 	}
 	
 	
