@@ -1,4 +1,4 @@
-package de.herrbockwurst.hubber.listeners;
+package de.herrbockwurst.hubber.Listeners;
 
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;

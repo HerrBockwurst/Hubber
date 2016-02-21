@@ -5,10 +5,10 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import de.herrbockwurst.hubber.Config.SimpleConfig;
 import de.herrbockwurst.hubber.Config.SimpleConfigManager;
-import de.herrbockwurst.hubber.commands.Hub;
-import de.herrbockwurst.hubber.listeners.VoidFall;
-import de.herrbockwurst.hubber.listeners.FallDamage;
+import de.herrbockwurst.hubber.Listeners.FallDamage;
+import de.herrbockwurst.hubber.Listeners.VoidFall;
 import de.herrbockwurst.hubber.FixConfig;
+import de.herrbockwurst.hubber.Commands.Hub;
 
 public class Main extends JavaPlugin {
 	
@@ -16,6 +16,7 @@ public class Main extends JavaPlugin {
     public SimpleConfigManager manager;
     public SimpleConfig config;
     public SimpleConfig lang;
+    public SimpleConfig lobbys;
     
     
 	@Override
@@ -26,6 +27,11 @@ public class Main extends JavaPlugin {
 		registerListeners();
 		registerCommands();
 		getBungeeCon();
+		MySQL.connect();
+	}
+	@Override
+	public void onDisable() {
+		MySQL.disconnect();
 	}
 	
 	public void getBungeeCon() {
@@ -36,6 +42,7 @@ public class Main extends JavaPlugin {
 		manager = new SimpleConfigManager(this);
 		config = manager.getNewConfig("config.yml");
 		lang = manager.getNewConfig("language/de.yml");
+		lobbys = manager.getNewConfig("lobbys.yml");
 		
 		FixConfig.fix();
 	}
