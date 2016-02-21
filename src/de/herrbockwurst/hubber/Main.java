@@ -28,10 +28,13 @@ public class Main extends JavaPlugin {
 		registerCommands();
 		getBungeeCon();
 		MySQL.connect();
+		MySQLDefaults.create();
+		
 	}
 	@Override
 	public void onDisable() {
 		MySQL.disconnect();
+		System.out.println("test");
 	}
 	
 	public void getBungeeCon() {

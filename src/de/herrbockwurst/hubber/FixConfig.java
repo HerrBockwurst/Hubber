@@ -64,7 +64,7 @@ public class FixConfig {
 			lang.saveConfig();
 		}
 		if(!lang.contains("MySQL.disconnect")) {
-			lang.set("MySQL.conOK", "MySQL Verbindung getrennt!");
+			lang.set("MySQL.disconnect", "MySQL Verbindung getrennt!");
 			lang.saveConfig();
 		}
 	}
