@@ -6,6 +6,8 @@ import org.bukkit.plugin.java.JavaPlugin;
 import de.herrbockwurst.hubber.Config.SimpleConfig;
 import de.herrbockwurst.hubber.Config.SimpleConfigManager;
 import de.herrbockwurst.hubber.Listeners.FallDamage;
+import de.herrbockwurst.hubber.Listeners.PlayerHit;
+import de.herrbockwurst.hubber.Listeners.PlayerJoin;
 import de.herrbockwurst.hubber.Listeners.VoidFall;
 import de.herrbockwurst.hubber.FixConfig;
 import de.herrbockwurst.hubber.Commands.Hub;
@@ -53,6 +55,8 @@ public class Main extends JavaPlugin {
 	public void registerListeners() {
 		getServer().getPluginManager().registerEvents(new VoidFall(), this);
 		getServer().getPluginManager().registerEvents(new FallDamage(), this);
+		getServer().getPluginManager().registerEvents(new PlayerHit(), this);
+		getServer().getPluginManager().registerEvents(new PlayerJoin(), this);
 	}
 	
 	public void registerCommands() {
